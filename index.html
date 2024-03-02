@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Tutorial</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-providers@1.9.0/leaflet-providers.js"></script>
+<script src="https://raw.githubusercontent.com/girodsoft/us-states-leaflet/master/us-states.js"></script>
+    
+</head>
+
+<body>
+    <div id="map" style="width: 800px; height: 600px;"></div>
+    <script>
+var map = L.map('map', {
+  'center': [0, 0],
+  'zoom': 1,
+  'layers': [
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      'attribution': 'Map data &copy; OpenStreetMap contributors'
+    })
+  ]
+});
+
+        var maxBounds = [
+        [22.76, -130.78], //Southwest
+        [50.06, -65.04]  //Northeast
+        ];
+
+map.setMaxBounds(maxBounds);
+map.fitBounds(maxBounds);
+
+
+      </script>
+</body>
+
+</html>
+
